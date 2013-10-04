@@ -1,0 +1,31 @@
+{
+  "name": "WeTalk",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.0",
+    "jade": "*",
+    "express-routescan": "*",
+    "mongoose": "*"
+  },
+  "description": "Social collaborative platform",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lammoth/social-platform.git"
+  },
+  "keywords": [
+    "wetalk",
+    "social",
+    "platform"
+  ],
+  "author": "Francisco Hidalgo",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/lammoth/social-platform/issues"
+  }
+}
