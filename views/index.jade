@@ -1,7 +1,11 @@
 extends layout 
 
 append header
-	include header
+    include header
 append content
-	p Insert the text you want
-	include entry
+    p Insert the text you want
+    include entry
+    p= entries
+    //- ul
+    //-     each entry in entries
+    //-         li= entry

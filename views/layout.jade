@@ -3,12 +3,35 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href='/stylesheets/foundation/foundation.min.css')
+    link(rel="stylesheet", href='/stylesheets/foundation/normalize.css')
   body
-    #header
+    #header.small-12.columns
         block header
-    #wrapper
+    #wrapper.small-12.columns
         #content
             block content
                 block entry
         block widgets
     block footer
+    script(type='text/javascript', src="/javascripts/vendor/custom.modernizr.js")
+    script(type='text/javascript', src="/javascripts/vendor/jquery.js")
+    script(type='text/javascript', src="/javascripts/vendor/zepto.js")
+    script(type='text/javascript', src="/javascripts/jquery.shorten.js")
+    script(type='text/javascript', src="/javascripts/jquery.mCustomScrollbar.concat.min.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.forms.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.alerts.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.clearing.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.cookie.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.dropdown.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.joyride.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.magellan.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.orbit.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.placeholder.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.reveal.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.section.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.tooltips.js")
+    script(type='text/javascript', src="/javascripts/foundation/foundation.topbar.js")
+    script(type='text/javascript').
+        $(document).foundation();
