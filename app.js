@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var routescan = require('express-routescan');
+var db = require('mongoose');
 //var i18n = require("i18n");
 
 // Initializing Express
@@ -18,6 +19,9 @@ var settings = require('./settings');
 
 // Custom init
 routescan(app);
+var dbURL = 'mongodb://localhost/wetalk';
+var dbCon = db.connect(dbURL);
+
 
 // i18n.configure({
 //     locales:['es', 'en'],
