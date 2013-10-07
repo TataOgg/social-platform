@@ -5,7 +5,7 @@
 
 var mongoose = require('mongoose');
 
-var UserSchema = new mongoose.Schema({
+var userSchema = new mongoose.Schema({
 	username: String,
 	firstname: String,
 	lastname: String,
@@ -13,4 +13,4 @@ var UserSchema = new mongoose.Schema({
 	password: String
 });
 
-module.exports = UserSchema;
+module.exports = userSchema;
