@@ -6,7 +6,8 @@
 var mongoose = require('mongoose');
 
 var entrySchema = new mongoose.Schema({
-	text: String,
+	userId: String,
+    entry: String,
 	type: String
 });
 
