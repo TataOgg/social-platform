@@ -9,8 +9,6 @@ var walk = require('walk');
 
 function loadResources(app, theme) {
 
-    app.locals.prueba = theme;
-
     function findModules(dir) {
         styles = [];
         var walker = walk.walk(dir, {followLinks: false});
@@ -26,13 +24,14 @@ function loadResources(app, theme) {
         });
 
         walker.on('end', function() {
-            console.log("*************************");
+            console.log(styles);
         });
     }
 
     return function loadResources(req, res, next) {
-        findModules('./public/stylesheets');
-        console.log(req.accepts('html'));
+        if (req.path.indexOf('.js') == -1 && req.path.indexOf('.css') == -1) {
+            findModules('./public/themes/' + theme + '/');
+        }
         next();
     };
 }
