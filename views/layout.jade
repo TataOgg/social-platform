@@ -5,6 +5,10 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet", href='/stylesheets/foundation/foundation.min.css')
     link(rel="stylesheet", href='/stylesheets/foundation/normalize.css')
+
+    // Custom styles
+    each styleFile in styleFiles
+        link(rel='stylesheet', href= styleFile)
   body
     #header.small-12.columns
         block header
@@ -32,5 +36,10 @@ html
     script(type='text/javascript', src="/javascripts/foundation/foundation.section.js")
     script(type='text/javascript', src="/javascripts/foundation/foundation.tooltips.js")
     script(type='text/javascript', src="/javascripts/foundation/foundation.topbar.js")
+    
+    // Custom javascripts
+    each jsFile in jsFiles
+        script(type='text/javascript', src= jsFile)
+            
     script(type='text/javascript').
         $(document).foundation();
