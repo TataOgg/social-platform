@@ -3,7 +3,7 @@
  * GET users listing.
  */
 
-var userModel = require('../data/models/core/user');
+var userModel = require('../../../data/models/core/user');
 
 module.exports = {
     '/users': function(req, res, next) {

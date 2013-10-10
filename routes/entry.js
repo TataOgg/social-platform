@@ -4,13 +4,12 @@
  */
 
 var loadEntriesMiddleware = require('../middleware/core/load_entries');
-var createEntryMiddleware = require('../middleware/core/create_entry');
-var createEntryReplyMiddleware = require('../middleware/core/create_reply');
+var createObjectMiddleware = require('../middleware/core/create_object');
 
 module.exports = {
     '/entry/create': {
         methods: ['post'],
-        middleware: [createEntryMiddleware],
+        middleware: [createObjectMiddleware('entry')],
         fn: function(req, res, next) {
             res.redirect('/');
         }
@@ -28,7 +27,7 @@ module.exports = {
     },
     '/entry/reply/create': {
         methods: ['post'],
-        middleware: [createEntryReplyMiddleware],
+        middleware: [createObjectMiddleware('entry_reply')],
         fn: function(req, res, next) {
             res.redirect(req.get('Referer'));
         }

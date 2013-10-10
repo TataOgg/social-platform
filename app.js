@@ -8,14 +8,14 @@ var http = require('http');
 var path = require('path');
 var routescan = require('express-routescan');
 var db = require('mongoose');
-var loadRsesourcesMiddleware = require('./middleware/core/load_resources');
+var settings = require('./settings');
+var loadRsesourcesMiddleware = require(settings.middlewaresPath + 'core/load_resources');
 //var i18n = require("i18n");
 
 // Initializing Express
 var app = express();
 
 // Custom imports
-var settings = require('./settings');
 //var urls = require('./urls')(app);
 
 // i18n.configure({
@@ -52,7 +52,7 @@ if ('production' == app.get('pro')) {
 }
 
 // Custom init
-routescan(app);
+routescan(app, {directory: ['./routes', './modules']});
 var dbURL = 'mongodb://localhost/wetalk';
 var dbCon = db.connect(dbURL);
 
