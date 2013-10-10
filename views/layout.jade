@@ -2,21 +2,23 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet", href='/stylesheets/foundation/foundation.min.css')
     link(rel="stylesheet", href='/stylesheets/foundation/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
 
     // Custom styles
     each styleFile in styleFiles
         link(rel='stylesheet', href= styleFile)
   body
-    #header.small-12.columns
-        block header
-    #wrapper.small-12.columns
-        #content
-            block content
-                block entry
-        block widgets
+    .row
+        #header.small-12.columns
+            block header
+    .row
+        #wrapper.small-8.columns.small-centered
+            #content
+                block content
+                    block entry
+            block widgets
     block footer
 
     script(type='text/javascript', src="/javascripts/vendor/custom.modernizr.js")

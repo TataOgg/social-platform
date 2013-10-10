@@ -4,15 +4,33 @@
  */
 
 var entryModel = require('../../data/models/core/entry');
+var entryReplyModel = require('../../data/models/core/entry_reply');
 
 function loadEntries(req, res, next) {
-    entryModel.find({userId: "52529dad0e709b7031fe3282"}, function(err, entries) {
-        if (err) {
-            return next(err);
-        }
-        req.entries = entries;
-        next();
-    });
+    entryId = req.params.entry_id;
+    if (entryId === undefined)
+        entryModel.find({userId: "52529dad0e709b7031fe3282"}, function(err, entries) {
+            if (err) {
+                return next(err);
+            }
+            req.entries = entries;
+            next();
+        });
+    else
+        entryModel.find({userId: "52529dad0e709b7031fe3282", _id: entryId}, function(err, entry) {
+            if (err) {
+                return next(err);
+            } else {
+                entryReplyModel.find({userId: "52529dad0e709b7031fe3282", entryId: entryId}, function(err, entries) {
+                    if (err) {
+                        return next(err);
+                    }
+                    req.entry = entry;
+                    req.entries = entries;
+                    next();
+                });
+            }
+        });
 }
 
 module.exports = loadEntries;

@@ -3,8 +3,13 @@ extends layout
 append header
     include header
 append content
-    p Insert the text you want
-    include entry
-    ul
-        each entry in entries
-            li= entry.entry
+    .row
+        .small-8.columns.small-centered
+            h5 Insert the text you want
+            include entry
+    .row
+        .small-8.columns.small-centered
+            h6 Your entries
+            each entry in entries
+                a(href="/entry/" + entry.id)= entry.entry
+                br
