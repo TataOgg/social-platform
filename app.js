@@ -52,7 +52,8 @@ if ('production' == app.get('pro')) {
 }
 
 // Custom init
-routescan(app, {directory: ['./routes', './modules']});
+//routescan(app, {directory: ['./routes', './modules']});
+routescan(app, {directory: ['./routes']});
 var dbURL = 'mongodb://localhost/wetalk';
 var dbCon = db.connect(dbURL);
 

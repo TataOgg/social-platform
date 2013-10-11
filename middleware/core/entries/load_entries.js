@@ -3,8 +3,8 @@
  * Get user's entries
  */
 
-var entryModel = require('../../data/models/core/entry');
-var entryReplyModel = require('../../data/models/core/entry_reply');
+var entryModel = require('../../../data/models/core/entries/entry');
+var entryReplyModel = require('../../../data/models/core/entries/entry_reply');
 
 function loadEntries(req, res, next) {
     entryId = req.params.entry_id;

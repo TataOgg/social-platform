@@ -5,8 +5,8 @@
 
 var settings = require('../../settings');
 
-function createObject(model) {
-    var modelObject = require(settings.modelsPath + 'core/' + model);
+function createObject(model, subpath) {
+    var modelObject = require(settings.modelsPath + subpath + model);
 
     return function createObject(req, res, next) {
         modelObject.create(req.body, function(err) {

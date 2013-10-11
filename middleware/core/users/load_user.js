@@ -3,7 +3,7 @@
  * Get an user from mongoDB
  */
 
-var userModel = require('../../../data/models/core/user');
+var userModel = require('../../../data/models/core/users/user');
 
 function loadUser(req, res, next) {
     userModel.findOne({username: req.params.name}, function(err, user) {
