@@ -9,7 +9,8 @@
     "express": "3.4.0",
     "jade": "*",
     "express-routescan": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "diveSync": "*"
   },
   "description": "Social collaborative platform",
   "main": "app.js",
