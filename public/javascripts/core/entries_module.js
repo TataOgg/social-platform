@@ -21,10 +21,18 @@
 
 var entryService = angular.module('EntryService', ['ngResource']);
 
-entryService.factory('Entries', ['$resource',
+entryService.factory('LoadEntries', ['$resource',
     function($resource){
         return $resource('entry/:entry_id', {entry_id: '@entry_id'}, {
-            get: {method:'GET', isArray:true}
+            load_replies: {method:'GET', isArray:true}
+        });
+    }
+]);
+
+entryService.factory('CreateEntry', ['$resource',
+    function($resource){
+        return $resource('entry/create', {}, {
+            create_entry: {method:'POST', isArray:true}
         });
     }
 ]);

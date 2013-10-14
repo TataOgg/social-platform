@@ -1,6 +1,7 @@
 block entry
-    form(name="entry", action="/entry/create", method="post", enctype="application/x-www-form-urlencoded").custom
-        textarea(name="entry", ng-model='title.text')
+    //- form(name="entry", action="/entry/create", method="post", enctype="application/x-www-form-urlencoded").custom
+    form(enctype="application/x-www-form-urlencoded", ng-submit="createEntry()", ng-controller="IndexController").custom
+        textarea(name="entry")
         input(type="hidden", name="type", value="normal")
         input(type="hidden", name="userId", value="52529dad0e709b7031fe3282")
         br

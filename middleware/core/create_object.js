@@ -9,6 +9,7 @@ function createObject(model, subpath) {
     var modelObject = require(settings.modelsPath + subpath + model);
 
     return function createObject(req, res, next) {
+        console.log(req.body);
         modelObject.create(req.body, function(err) {
             if (err) {
                 return next(err);
