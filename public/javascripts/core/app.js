@@ -8,7 +8,7 @@ app.controller('IndexController', function (LoadEntries, CreateEntry, $scope) {
     };
 
     $scope.createEntry = function() {
-        console.log(this);
+        console.log($scope.entry.type);
         // $scope.entries = CreateEntry.create_entry();
     };
 });
