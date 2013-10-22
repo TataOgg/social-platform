@@ -3,8 +3,9 @@
  * Entry actions.
  */
 
-var loadEntriesMiddleware = require('../../../middleware/core/entries/load_entries');
 var createObjectMiddleware = require('../../../middleware/core/create_object');
+var loadEntriesMiddleware = require('../../../middleware/core/entries/load_entries');
+var identifyEntrytMiddleware = require('../../../middleware/core/entries/identify_entry');
 
 module.exports = {
     // '/entry/create': {
@@ -16,7 +17,7 @@ module.exports = {
     // },
     '/entry/create': {
         methods: ['post'],
-        middleware: [createObjectMiddleware('entry', 'core/entries/')],
+        middleware: [identifyEntrytMiddleware],
         fn: function(req, res, next) {
             res.redirect('/');
         }
