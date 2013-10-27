@@ -11,10 +11,17 @@ app.controller('IndexController', function (LoadEntries, $scope, $http) {
         console.log($scope.entry);
         //console.log($http);
         //$scope.entries = CreateEntry.create_entry();
-        $http('POST', '/entry/create', $scope.entry, function(status, response){
-            console.log('Yeah!');
-        }, function(status, response){
-            console.log('Oh my GOD!');
-        });
+        // $http('POST', '/entry/create', $scope.entry, function(status, response){
+        //     console.log('Yeah!');
+        // }, function(status, response){
+        //     console.log('Oh my GOD!');
+        // });
+        $http({method: 'POST', data: $scope.entry, url: '/entry/create'}).
+            success(function(data, status, headers, config) {
+                console.log(status);
+            }).
+            error(function(data, status, headers, config) {
+                console.log(status);
+            });
     };
 });
