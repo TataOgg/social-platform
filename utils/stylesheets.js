@@ -1,10 +1,12 @@
 
 /**
- * Stylesheets operations
+ * URL operations
  */
 
-function insertStyles(styles) {
+ var request = require('request');
+
+function checkUrl(url) {
     
 }
 
-module.exports = insertStyles;
+module.exports = checkUrl;

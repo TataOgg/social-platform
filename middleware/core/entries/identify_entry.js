@@ -3,12 +3,12 @@
  * Save an element
  */
 
-var request = require('request');
 var settings = require('../../../settings');
+var checkURL = require('../../../utils/check_url');
 
 function identifyEntry(req, res, next) {
     var entry = req.body.entry;
-    console.log(entry);
+    checkURL(entry);
     next();
 }
 

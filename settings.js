@@ -24,6 +24,10 @@ exports.schemasPath = rootPath + '/data/schemas/';
 // Views path
 exports.viewsPath = rootPath + '/views/';
 
+// Widgets
+// Twitter address
+exports.twitterURL = 'www.twitter.com';
+
 
 
 
