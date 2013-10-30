@@ -22,12 +22,12 @@ function isURL(url) {
 function checkURL(url) {
     if (isURL(url)) {
         if (checkTwitterURL(url)) {
-            console.log('Is a Twitter URL');
+            return {type: 'twitter-url'}
         } else {
-            console.log('NOT is a Twitter URL');
+            return {type: 'url'}
         }
     } else {
-        console.log('NOT an URL');
+        return {type: 'normal'}
     }
 }
 

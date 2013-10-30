@@ -8,20 +8,20 @@ var loadEntriesMiddleware = require('../../../middleware/core/entries/load_entri
 var identifyEntrytMiddleware = require('../../../middleware/core/entries/identify_entry');
 
 module.exports = {
-    // '/entry/create': {
-    //     methods: ['post'],
-    //     middleware: [createObjectMiddleware('entry', 'core/entries/')],
-    //     fn: function(req, res, next) {
-    //         res.redirect('/');
-    //     }
-    // },
     '/entry/create': {
         methods: ['post'],
-        middleware: [identifyEntrytMiddleware],
+        middleware: [createObjectMiddleware('entry', 'core/entries/')],
         fn: function(req, res, next) {
             res.redirect('/');
         }
     },
+    // '/entry/create': {
+    //     methods: ['post'],
+    //     middleware: [identifyEntrytMiddleware],
+    //     fn: function(req, res, next) {
+    //         res.redirect('/');
+    //     }
+    // },
     // '/entry/:entry_id': {
     //     methods: ['get'],
     //     middleware: [loadEntriesMiddleware],
