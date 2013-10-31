@@ -10,19 +10,9 @@ var routescan = require('express-routescan');
 var db = require('mongoose');
 var settings = require('./settings');
 var loadRsesourcesMiddleware = require(settings.middlewaresPath + 'core/load_resources');
-//var i18n = require("i18n");
 
 // Initializing Express
 var app = express();
-
-// Custom imports
-//var urls = require('./urls')(app);
-
-// i18n.configure({
-//     locales:['es', 'en'],
-//     defaultLocale: 'es',
-//     directory: __dirname + '/locales'
-// });
 
 // all environments
 app.set('port', settings.port || 3000);
@@ -33,11 +23,6 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(loadRsesourcesMiddleware(app, settings.theme));
-// app.use(function (req, res, next) {
-//     req.prueba = "prueba";
-//     next();
-// });
-//app.use(i18n.init);
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -56,9 +41,6 @@ if ('production' == app.get('pro')) {
 routescan(app, {directory: ['./routes']});
 var dbURL = 'mongodb://localhost/wetalk';
 var dbCon = db.connect(dbURL);
-
-//app.get('/', routes.index);
-//app.get('/users', user.list);
 
 var server = http.createServer(app);
 

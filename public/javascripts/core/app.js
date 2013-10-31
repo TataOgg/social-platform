@@ -4,7 +4,7 @@ var app = angular.module('WeTalk', ['EntryService', 'Socketio', 'RESTservice']);
 
 app.controller('IndexController', function (LoadEntries, socketIO, restService, $scope, $http) {
     $scope.getReplies = function(id) {
-        //$scope.entries = LoadEntries.load_replies({entry_id: id});
+        $scope.entries = LoadEntries.load_replies({entry_id: id});
     };
 
     $scope.createEntry = function() {
