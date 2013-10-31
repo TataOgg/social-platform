@@ -26,7 +26,7 @@ exports.viewsPath = rootPath + '/views/';
 
 // Widgets
 // Twitter address
-exports.twitterURL = 'www.twitter.com';
+exports.twitterURL = 'twitter.com';
 
 
 

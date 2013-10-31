@@ -12,7 +12,8 @@ function isTwitterURL(url) {
     } catch(err) {
         return false;
     }
-    if (req.host === settings.twitterURL) {
+    
+    if (req.host.indexOf(settings.twitterURL) > -1) {
         return true;
     } else {
         return false;
