@@ -13,12 +13,11 @@ append content
         .row
             .small-8.columns.small-centered
                 h6 Your entries
-                each entry in entries
-                    a(href="", ng-click='getReplies("' + entry.id + '")')= entry.entry
-                    br
                 div(ng-repeat='entry in entries')
-                    p {{entry.reply}}
+                    span(ng-bind='entry.entry')
+                    br
+                    br
 append scripts
-    script(type='text/javascript', src="/javascripts/core/entries_module.js")
-    script(type='text/javascript', src="/javascripts/core/socketio_module.js")
-    script(type='text/javascript', src="/javascripts/core/rest_module.js")    
+    script(type='text/javascript', src="/javascripts/core/controllers/index_controller.js")
+    script(type='text/javascript', src="/javascripts/core/services/socketio_service.js")
+    script(type='text/javascript', src="/javascripts/core/services/rest_service.js")

@@ -4,15 +4,25 @@
  */
 
 var createObjectMiddleware = require('../../../middleware/core/create_object');
+var loadObjectsMiddleware = require('../../../middleware/core/load_objects');
 var loadEntriesMiddleware = require('../../../middleware/core/entries/load_entries');
 var identifyEntrytMiddleware = require('../../../middleware/core/entries/identify_entry');
 
 module.exports = {
+    '/entry': {
+        methods: ['get'],
+        middleware: [loadObjectsMiddleware('entry', 'core/entries/', {})],
+        fn: function(req, res, next) {
+            req.entries = req.objects;
+            res.json(req.entries);
+        }
+    },
     '/entry/create': {
         methods: ['post'],
         middleware: [createObjectMiddleware('entry', 'core/entries/')],
         fn: function(req, res, next) {
-            res.redirect('/');
+            //res.redirect('/');
+            res.json(req.entries);
         }
     },
     // '/entry/create': {

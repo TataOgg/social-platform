@@ -5,17 +5,18 @@
 
 var settings = require('../../settings');
 
-function createObject(model, subpath) {
+function loadObjects(model, subpath, conditions) {
     var modelObject = require(settings.modelsPath + subpath + model);
 
-    return function createObject(req, res, next) {
-        modelObject.create(req.body, function(err) {
+    return function loadObjects(req, res, next) {
+        modelObject.find(conditions, function(err, objects) {
             if (err) {
                 return next(err);
             }
+            req.objects = objects;
             next();
         });
     };
 }
 
-module.exports = createObject;
+module.exports = loadObjects;
