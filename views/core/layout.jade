@@ -17,15 +17,16 @@ block htmltag
             script(type='text/javascript', src="/javascripts/vendor/angular.js")
             script(type='text/javascript', src="/javascripts/vendor/angular-resource.js")
         body
-            .row
-                #header.small-12.columns
-                    block header
-            .row
-                #wrapper.small-8.columns.small-centered
-                    #content
-                        block content
-                            block entry
-                    block widgets
+            .container
+                .row
+                    #header.col-md-12
+                        block header
+                .row
+                    #wrapper.col-md-offset-2.col-md-8
+                        #content
+                            block content
+                                block entry
+                        block widgets
             block footer
 
             block scripts

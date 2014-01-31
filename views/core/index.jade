@@ -7,11 +7,11 @@ append header
 append content
     div(ng-controller='IndexController')
         .row
-            .small-8.columns.small-centered
+            .col-md-offset-2.col-md-8
                 h5 Insert the text you want
                 include entries/entry
         .row
-            .small-8.columns.small-centered
+            .col-md-offset-2.col-md-8
                 div(ng-view)
 
 append scripts
