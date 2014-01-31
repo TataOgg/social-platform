@@ -12,11 +12,8 @@ append content
                 include entries/entry
         .row
             .small-8.columns.small-centered
-                h6 Your entries
-                div(ng-repeat='entry in entries')
-                    span(ng-bind='entry.entry')
-                    br
-                    br
+                div(ng-view)
+
 append scripts
     script(type='text/javascript', src="/javascripts/core/controllers/index_controller.js")
     script(type='text/javascript', src="/javascripts/core/services/socketio_service.js")

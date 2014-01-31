@@ -5,8 +5,7 @@ block htmltag
             title= title
 
             // Styles files
-            link(rel="stylesheet", href='/stylesheets/foundation/foundation.min.css')
-            link(rel="stylesheet", href='/stylesheets/foundation/normalize.css')
+            link(rel="stylesheet", href='/stylesheets/vendor/bootstrap/css/bootstrap.min.css')
             link(rel='stylesheet', href='/stylesheets/style.css')
 
             // Custom styles
@@ -31,15 +30,8 @@ block htmltag
 
             block scripts
                 script(type='text/javascript', src="/javascripts/core/app.js")
-                script(type='text/javascript', src="/javascripts/vendor/custom.modernizr.js")
-                script(type='text/javascript', src="/javascripts/vendor/jquery.js")
-                script(type='text/javascript', src="/javascripts/vendor/zepto.js")
-                script(type='text/javascript', src="/javascripts/vendor/foundation/foundation.min.js")
-                script(type='text/javascript', src="/javascripts/vendor/foundation/foundation.forms.js")
-                script(type='text/javascript', src="/javascripts/vendor/foundation/foundation.dropdown.js")
-                script(type='text/javascript', src="/javascripts/vendor/foundation/foundation.reveal.js")
-                script(type='text/javascript', src="/javascripts/vendor/foundation/foundation.section.js")
-                script(type='text/javascript', src="/javascripts/vendor/foundation/foundation.topbar.js")                
+                script(type='text/javascript', src="/javascripts/vendor/jquery.js")                
+                script(type='text/javascript', src="/javascripts/vendor/bootstrap/js/bootstrap.min.js")                               
 
             // Custom javascripts
             each jsFile in jsFiles
