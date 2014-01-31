@@ -12,6 +12,7 @@
     "mongoose": "*",
     "diveSync": "*",
     "request": "*"
+    "socket.io": "*"
   },
   "description": "Social collaborative platform",
   "main": "app.js",

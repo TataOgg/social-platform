@@ -8,11 +8,12 @@ append content
     div(ng-controller='IndexController')
         .row
             .col-md-offset-2.col-md-8
-                h5 Insert the text you want
+                h4 Insert the text you want
                 include entries/entry
         .row
             .col-md-offset-2.col-md-8
                 div(ng-view)
+                    include entries/entries        
 
 append scripts
     script(type='text/javascript', src="/javascripts/core/controllers/index_controller.js")

@@ -1,4 +1,3 @@
-
 /**
  * GET home page.
  */
@@ -12,7 +11,9 @@ module.exports = {
         methods: ['get'],
         middleware: [loadEntriesMiddleware],
         fn: function(req, res, next) {
-            res.render('core/index', { title: 'WeTalk', entries: req.entries });
+            res.render('core/index', {
+                entries: req.entries
+            });
         }
     }
 };

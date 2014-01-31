@@ -3,6 +3,8 @@ block htmltag
     html
         head
             title= title
+            meta(http-equiv='X-UA-Compatible', content='IE=edge')
+            meta(name='viewport', content='width=device-width, initial-scale=1')
 
             // Styles files
             link(rel="stylesheet", href='/stylesheets/vendor/bootstrap/css/bootstrap.min.css')
@@ -17,6 +19,20 @@ block htmltag
             script(type='text/javascript', src="/javascripts/vendor/angular.js")
             script(type='text/javascript', src="/javascripts/vendor/angular-resource.js")
         body
+            .navbar.navbar-inverse(role='navigation')
+                .container
+                    .navbar-header
+                        button(type='button', class='navbar-toggle', data-toggle='collapse', data-target='.navbar-collapse')
+                            .span(class='sr-only') Toggle navigation
+                            .span(class='icon-bar')
+                            .span(class='icon-bar')
+                            .span(class='icon-bar')
+                        a.navbar-brand(href='#') #{title}
+                    .collapse.navbar-collapse
+                        ul.nav.navbar-nav
+                            div(ng-repeat='section in sections')
+                                li.active
+                                    a(href='#') Home
             .container
                 .row
                     #header.col-md-12
@@ -37,6 +53,3 @@ block htmltag
             // Custom javascripts
             each jsFile in jsFiles
                 script(type='text/javascript', src= jsFile)
-                    
-            script(type='text/javascript').
-                $(document).foundation();
