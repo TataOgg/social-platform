@@ -27,12 +27,16 @@ block htmltag
                             .span(class='icon-bar')
                             .span(class='icon-bar')
                             .span(class='icon-bar')
-                        a.navbar-brand(href='#') #{title}
+                        a.navbar-brand(href='/') #{title}
                     .collapse.navbar-collapse
                         ul.nav.navbar-nav
-                            div(ng-repeat='section in sections')
-                                li.active
-                                    a(href='#') Home
+                            each section in sections
+                                li.dropdown
+                                    a.dropdown-toggle(href='', data-toggle='dropdown')= section.name
+                                    ul.dropdown-menu
+                                        each s in section.sections
+                                            li
+                                                a(href=s.route)= s.name
             .container
                 .row
                     #header.col-md-12

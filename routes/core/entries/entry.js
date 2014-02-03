@@ -3,10 +3,10 @@
  * Entry actions.
  */
 
-var createObjectMiddleware = require('../../../middleware/core/create_object');
-var loadObjectsMiddleware = require('../../../middleware/core/load_objects');
-var loadEntriesMiddleware = require('../../../middleware/core/entries/load_entries');
-var identifyEntrytMiddleware = require('../../../middleware/core/entries/identify_entry');
+var createObjectMiddleware = require('../../../middlewares/core/create_object');
+var loadObjectsMiddleware = require('../../../middlewares/core/load_objects');
+var loadEntriesMiddleware = require('../../../middlewares/core/entries/load_entries');
+var identifyEntrytMiddleware = require('../../../middlewares/core/entries/identify_entry');
 
 module.exports = {
     '/entry': {

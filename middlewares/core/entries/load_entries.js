@@ -9,7 +9,7 @@ var entryReplyModel = require('../../../data/models/core/entries/entry_reply');
 function loadEntries(req, res, next) {
     entryId = req.params.entry_id;
     if (entryId === undefined)
-        entryModel.find({userId: "52529dad0e709b7031fe3282"}, function(err, entries) {
+        entryModel.find({}, function(err, entries) {
             if (err) {
                 return next(err);
             }
@@ -17,7 +17,7 @@ function loadEntries(req, res, next) {
             next();
         });
     else
-        entryModel.find({userId: "52529dad0e709b7031fe3282", _id: entryId}, function(err, entry) {
+        entryModel.find({}, function(err, entry) {
             if (err) {
                 return next(err);
             } else {

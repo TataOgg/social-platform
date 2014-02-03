@@ -11,14 +11,18 @@ var rootPath = process.cwd();
 exports.rootPath = rootPath;
 
 // Paths
+// Libs path
+exports.libsPath = rootPath + '/libs/';
 // Middlewares path
-exports.middlewaresPath = rootPath + '/middleware/';
+exports.middlewaresPath = rootPath + '/middlewares/';
 // Models path
 exports.modelsPath = rootPath + '/data/models/';
 // Schemas path
 exports.schemasPath = rootPath + '/data/schemas/';
 // Views path
 exports.viewsPath = rootPath + '/views/';
+// Modules path
+exports.modulesPath = rootPath + '/modules/';
 
 // Site settings
 exports.site = {
@@ -31,8 +35,18 @@ exports.site = {
     theme: {
         property: 'theme',
         content: 'default'
+    },
+    sections: {
+        property: 'sections',
+        content: []
     }
 };
+
+// Modules to load
+exports.modules = [
+    'egovernment',
+    'chat'
+];
 
 // Widgets
 // Twitter address
