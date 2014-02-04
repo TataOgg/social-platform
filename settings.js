@@ -45,7 +45,7 @@ exports.site = {
 // Modules to load
 exports.modules = [
     'egovernment',
-    'chat'
+    'forum'
 ];
 
 // Widgets

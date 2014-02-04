@@ -4,13 +4,13 @@
 
 
 // Module name
-exports.name = 'e-Gorvernment';
+exports.name = 'Foro';
 
 // Routes
-exports.route_prefix = 'egovernment';
+exports.route_prefix = 'forum';
 
 // Root path
-var modulePath = process.cwd() + '/modules/egovernment';
+var modulePath = process.cwd() + '/modules/forum';
 exports.modulePath = modulePath;
 
 // Paths
@@ -31,14 +31,14 @@ exports.routesPath = modulePath + '/routes/';
 exports.sections = [
     section = {
         name: 'Iniciativa de gobierno',
-        route: '/egovernment/'
+        route: '/forum/'
     },
     section = {
         name: 'Iniciativa ciudadana',
-        route: '/egovernment/'
+        route: '/forum/'
     },
     section = {
         name: 'Noticias',
-        route: '/egovernment/'
+        route: '/forum/'
     }
 ];
