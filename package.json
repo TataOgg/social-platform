@@ -11,7 +11,7 @@
     "express-routescan": "*",
     "mongoose": "*",
     "diveSync": "*",
-    "request": "*"
+    "request": "*",
     "socket.io": "*"
   },
   "description": "Social collaborative platform",
